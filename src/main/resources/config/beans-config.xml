@@ -73,5 +73,11 @@
 		<bean id="mvtStockService" class="com.stock.mvc.services.impl.MvtStockServiceImpl">
 			<property name="dao" ref="mvtStockDao"></property>
 		</bean>
+		
+		<!-- Flickr -->
+		<bean id="flickrDao" class="com.stock.mvc.dao.impl.FlickrDaoImpl"/>
+		<bean id="flickrService" class="com.stock.mvc.services.impl.FlickrServiceImpl">
+			<property name="dao" ref="flickrDao"></property>
+		</bean>
 			
 </beans>
