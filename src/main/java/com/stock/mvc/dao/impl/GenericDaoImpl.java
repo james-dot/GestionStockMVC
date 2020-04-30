@@ -41,8 +41,9 @@ public class GenericDaoImpl<E> implements IGenericDao<E> {
 
 	@Override
 	public List<E> selectAll() {
-		Query query= em.createQuery("select t from " + type.getSimpleName() + "t");
+		Query query= em.createQuery("select t from " + type.getSimpleName() + " t");
 		return query.getResultList();
+		
 	}
 
 	@Override
