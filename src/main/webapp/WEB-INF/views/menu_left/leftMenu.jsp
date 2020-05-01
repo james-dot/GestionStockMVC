@@ -4,7 +4,7 @@
 			<i class="fas fa-laugh-wink"></i>
 		</div>
 		<div class="sidebar-brand-text mx-3">
-			Gestion du Stock <sup>*****</sup>
+			Gestion du Stock <sup>*</sup>
 		</div>
 	</a>
 	<hr class="sidebar-divider my-0">

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title><fmt:message key="common.article" /></title>
+	<title><fmt:message key="common.ajouter.categorie" /></title>
 	<link href="<%=request.getContextPath()%>/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/sb-admin-2.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 			<div id="content">
 				<%@include file="/WEB-INF/views/menu_top/topMenu.jsp" %><!--topMenu-->
 				<div class="container-fluid">
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.article" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.categorie" /></h1>
 				</div>
 			</div>
 	<div class="container">	
@@ -27,46 +27,25 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 							<div class="panel-heading">
-								<fmt:message key="article.nouveau"/>
+								<fmt:message key="categorie.nouveau"/>
 							</div>
-							<div class="panel-body"><!-- Formulaire Article -->
-								<c:url value="/article/enregistrer"	var= "urlEnregistrer" />	
-		<!-- forrmulaire pour ajouter et modifier article -->
-              					   <f:form modelAttribute="article" action="${urlEnregistrer}" enctype="multipart/form-data" role="form"><!-- enctype: envoyer une photo pour enregister  -->
-              						  <f:hidden path="idArticle" /><!-- qu on fait la modification le id est enregistrer -->
-              						   <f:hidden path="photo" /><!-- la photo -->
+							<div class="panel-body"><!-- Formulaire Client -->
+								<c:url value="/categorie/enregistrer"	var= "urlEnregistrer" />	
+		<!-- formulaire pour ajouter et modifier Categorie -->
+              					   <f:form modelAttribute="categorie" action="${urlEnregistrer}" role="form">              						  <f:hidden path="idCategorie" /><!-- qu on fait la modification le id est enregistrer -->
+              						   
               							<div class="form-group">
-              								<label><fmt:message key="common.codeArticle"/></label>
-              								<f:input path="codeArticle" class="form-control" placeholder="codeArticle"/>
+              								<label><fmt:message key="common.code"/></label>
+              								<f:input path="code" class="form-control" placeholder="Code"/>
               							</div>
               							<div class="form-group">
               								<label><fmt:message key="common.designation"/></label>
-              								<f:input path="designation" class="form-control" placeholder="designation"/>
+              								<f:input path="designation" class="form-control" placeholder="Designation"/>
               							</div>
-              							<div class="form-group">
-              								<label><fmt:message key="common.prixUnitaireHT"/></label>
-              								<f:input id="prixUnitHT" path="prixUnitaireHT" class="form-control" placeholder="prixUnitaireHT"/>
-              							</div>
-              							<div class="form-group">
-              								<label><fmt:message key="common.tauxTva"/></label>
-              								<f:input id="tauxTva" path="tauxTva" class="form-control" placeholder="tauxTva"/>
-              							</div>
-              							<div class="form-group">
-              								<label><fmt:message key="common.prixUnitaireTTC"/></label>
-              								<f:input id="prixUnitTTC" path="prixUnitaireTTC" class="form-control" placeholder="prixUnitaireTTC"/>
-              							</div>
-              				<!-- chaque article a une categorie -->
-              							<div class="form-group">
-              								<label><fmt:message key="common.categorie"/></label>
-              								<f:select class="form-control" path="categorie.idCategorie" items="${categories }" itemLabel="code" itemValue="idCategorie"/>
-              							</div>
-              							<div class="form-group">
-              								<label><fmt:message key="common.photo"/></label>
-              								<input name="file" type="file" >
-              							</div>
+              							
               							<div class="panel-footer">
               								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregister"/></i></button>
-              								<a href="<c:url value="/article/" />" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"/></i></a>
+              								<a href="<c:url value="/categorie/" />" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"/></i></a>
               							</div>
               						</f:form>
                             </div>
@@ -116,7 +95,5 @@
 	<script	src="<%=request.getContextPath() %>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script	src="<%=request.getContextPath() %>/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 	<script	src="<%=request.getContextPath() %>/resources/js/sb-admin-2.min.js"></script>
-	<!-- mon javascript file article.js -->
-	<script	src="<%=request.getContextPath() %>/resources/javascript/article.js"></script>
 </body>
 </html>
