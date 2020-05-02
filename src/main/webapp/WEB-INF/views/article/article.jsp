@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title><fmt:message key="common.client" /></title>
+		<title><fmt:message code="common.article" /></title>
 		<link href="<%=request.getContextPath()%>/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<link href="<%=request.getContextPath() %>/resources/css/sb-admin-2.min.css" rel="stylesheet">
@@ -22,16 +22,16 @@
 			<div id="content">
 				<%@include file="/WEB-INF/views/menu_top/topMenu.jsp" %><!--topMenu-->
 					<div class="container-fluid">
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.article" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="common.article" /></h1>
 				</div>
 			<div class="container-fluid">
            <div class="card shadow mb-4">
                   <div class="row">
             		<div class="col-lg-12">
             			<ol class="breadcrumb"> 
-            					<li><a href="<c:url value="/article/nouveau" />" ><i class="fas fa-user-plus"></i>&nbsp;<fmt:message key="common.ajouter" /></a></li>
-            					<li><a href="#"><i class="fa fa-download"></i>&nbsp;<fmt:message key="common.exporter" /></a></li>
-            					<li><a href="#"><i class="fa fa-upload"></i>&nbsp;<fmt:message key="common.importer" /></a></li>
+            					<li><a href="<c:url value="/article/nouveau" />" ><i class="fas fa-user-plus"></i>&nbsp;<fmt:message code="common.ajouter" /></a></li>
+            					<li><a href="#"><i class="fa fa-download"></i>&nbsp;<fmt:message code="common.exporter" /></a></li>
+            					<li><a href="#"><i class="fa fa-upload"></i>&nbsp;<fmt:message code="common.importer" /></a></li>
                			</ol>
             			        			
             		</div>
@@ -41,14 +41,14 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th><fmt:message key="common.photo" /></th>
-                      <th><fmt:message key="common.codeArticle" /></th>
-                      <th><fmt:message key="common.designation" /></th>
-                      <th><fmt:message key="common.prixUnitaireHT" /></th>
-                      <th><fmt:message key="common.tauxTva" /></th>
-                        <th><fmt:message key="common.prixUnitaireTTC" /></th>
-                          <th><fmt:message key="common.categorie" /></th>
-                   	  <th><fmt:message key="common.actions" /></th>
+                      <th><fmt:message code="common.photo" /></th>
+                      <th><fmt:message code="common.codeArticle" /></th>
+                      <th><fmt:message code="common.designation" /></th>
+                      <th><fmt:message code="common.prixUnitaireHT" /></th>
+                      <th><fmt:message code="common.tauxTva" /></th>
+                        <th><fmt:message code="common.prixUnitaireTTC" /></th>
+                          <th><fmt:message code="common.categorie" /></th>
+                   	  <th><fmt:message code="common.actions" /></th>
                     </tr>
                   </thead>
                 
@@ -66,21 +66,21 @@
 	                      		<c:url value="/article/modifier/${article.getIdArticle()}" var="urlModif" />
 		                      		  <a href="${urlModif}"><i class="fa fa-edit"></i></a> <!--icon modifier -->
 			                      		&nbsp;||&nbsp;
-			                      	  <a href="javascript:void(0);" data-toggle="modal" data-target="#modalClient${article.getIdArticle()}"><i class="fas fa-thumbs-down"></i></a> <!--icon supprimer -->
+			                      	  <a href="javascript:void(0);" data-toggle="modal" data-target="#modalArticle${article.getIdArticle()}"><i class="fas fa-thumbs-down"></i></a> <!--icon supprimer -->
 <!-- Popup pour confirmer la la suppression d'un article -->		
-								<div class="modal fade" id="modalClient${article.getIdArticle()}" tabindex="-1"	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal fade" id="modalArticle${article.getIdArticle()}" tabindex="-1"	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title" id="myModalLabel"><fmt:message key="common.confir.suppression"/></h4>
+												<h4 class="modal-title" id="myModalLabel"><fmt:message code="common.confir.suppression"/></h4>
 											</div>
 											<div class="modal-body">
-													<fmt:message key="client.confir.suppression.msg"/>
+													<fmt:message code="article.confir.suppression.msg"/>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"/></i></button>
+												<button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-arrow-left">&nbsp;<fmt:message code="common.annuler"/></i></button>
 												<c:url value="/article/supprimer/${article.getIdArticle() }" var="urlSuppression" />
-												<a href="${urlSuppression}" class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<fmt:message key="common.confirmer"/></a>
+												<a href="${urlSuppression}" class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<fmt:message code="common.confirmer"/></a>
 											</div>
 									</div>
 							</div> 

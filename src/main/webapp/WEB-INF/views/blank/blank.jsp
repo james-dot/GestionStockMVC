@@ -22,6 +22,7 @@
 					<h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
 				</div>
 			</div>
+			
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">

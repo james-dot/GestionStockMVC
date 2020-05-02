@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title><fmt:message key="common.ajouter.categorie" /></title>
+	<title><fmt:message code="common.ajouter.categorie" /></title>
 	<link href="<%=request.getContextPath()%>/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/sb-admin-2.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 			<div id="content">
 				<%@include file="/WEB-INF/views/menu_top/topMenu.jsp" %><!--topMenu-->
 				<div class="container-fluid">
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.categorie" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="common.categorie" /></h1>
 				</div>
 			</div>
 	<div class="container">	
@@ -27,25 +27,26 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 							<div class="panel-heading">
-								<fmt:message key="categorie.nouveau"/>
+								<fmt:message code="categorie.nouveau"/>
 							</div>
-							<div class="panel-body"><!-- Formulaire Client -->
+							<div class="panel-body"><!-- Formulaire categorie -->
 								<c:url value="/categorie/enregistrer"	var= "urlEnregistrer" />	
 		<!-- formulaire pour ajouter et modifier Categorie -->
-              					   <f:form modelAttribute="categorie" action="${urlEnregistrer}" role="form">              						  <f:hidden path="idCategorie" /><!-- qu on fait la modification le id est enregistrer -->
+              					   <f:form modelAttribute="categorie" action="${urlEnregistrer}" role="form">              						
+              					     <f:hidden path="idCategorie" /><!-- qu on fait la modification le id est enregistrer -->
               						   
               							<div class="form-group">
-              								<label><fmt:message key="common.code"/></label>
+              								<label><fmt:message code="common.code"/></label>
               								<f:input path="code" class="form-control" placeholder="Code"/>
               							</div>
               							<div class="form-group">
-              								<label><fmt:message key="common.designation"/></label>
+              								<label><fmt:message code="common.designation"/></label>
               								<f:input path="designation" class="form-control" placeholder="Designation"/>
               							</div>
               							
               							<div class="panel-footer">
-              								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregister"/></i></button>
-              								<a href="<c:url value="/categorie/" />" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"/></i></a>
+              								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message code="common.enregister"/></i></button>
+              								<a href="<c:url value="/categorie/" />" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message code="common.annuler"/></i></a>
               							</div>
               						</f:form>
                             </div>

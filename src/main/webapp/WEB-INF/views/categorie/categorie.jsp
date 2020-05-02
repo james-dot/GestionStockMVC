@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title><fmt:message key="common.categorie" /></title>
+		<title><fmt:message code="common.categorie" /></title>
 		<link href="<%=request.getContextPath()%>/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<link href="<%=request.getContextPath() %>/resources/css/sb-admin-2.min.css" rel="stylesheet">
@@ -22,16 +22,16 @@
 			<div id="content">
 				<%@include file="/WEB-INF/views/menu_top/topMenu.jsp" %><!--topMenu-->
 					<div class="container-fluid">
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.categorie" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="common.categorie" /></h1>
 				</div>
 			<div class="container-fluid">
            <div class="card shadow mb-4">
                   <div class="row">
             		<div class="col-lg-12">
             			<ol class="breadcrumb"> 
-            					<li><a href="<c:url value="/categorie/nouveau" />" ><i class="fas fa-user-plus"></i>&nbsp;<fmt:message key="common.ajouter" /></a></li>
-            					<li><a href="#"><i class="fa fa-download"></i>&nbsp;<fmt:message key="common.exporter" /></a></li>
-            					<li><a href="#"><i class="fa fa-upload"></i>&nbsp;<fmt:message key="common.importer" /></a></li>
+            					<li><a href="<c:url value="/categorie/nouveau" />" ><i class="fas fa-user-plus"></i>&nbsp;<fmt:message code="common.ajouter" /></a></li>
+            					<li><a href="#"><i class="fa fa-download"></i>&nbsp;<fmt:message code="common.exporter" /></a></li>
+            					<li><a href="#"><i class="fa fa-upload"></i>&nbsp;<fmt:message code="common.importer" /></a></li>
                			</ol>
             			        			
             		</div>
@@ -41,14 +41,14 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th><fmt:message key="common.code" /></th>
-                      <th><fmt:message key="common.designation" /></th>
-                       <th><fmt:message key="common.actions" /></th>
+                      <th><fmt:message code="common.code" /></th>
+                      <th><fmt:message code="common.designation" /></th>
+                       <th><fmt:message code="common.actions" /></th>
                     </tr>
                   </thead>
                 
                   <tbody>
-	                  <c:forEach items="${categories }" var="client">
+	                  <c:forEach items="${categories }" var="categorie">
 	                    <tr class="add gradeX">
 	                      
 	                      <td>${categorie.getCode() }</td>
@@ -63,15 +63,15 @@
 									<div class="modal-dialog">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title" id="myModalLabel"><fmt:message key="common.confir.suppression"/></h4>
+												<h4 class="modal-title" id="myModalLabel"><fmt:message code="common.confir.suppression"/></h4>
 											</div>
 											<div class="modal-body">
-													<fmt:message key="categorie.confir.suppression.msg"/>
+													<fmt:message code="categorie.confir.suppression.msg"/>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"/></i></button>
+												<button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-arrow-left">&nbsp;<fmt:message code="common.annuler"/></i></button>
 												<c:url value="/categorie/supprimer/${categorie.getIdCategorie() }" var="urlSuppression" />
-												<a href="${urlSuppression}" class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<fmt:message key="common.confirmer"/></a>
+												<a href="${urlSuppression}" class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<fmt:message code="common.confirmer"/></a>
 											</div>
 									</div>
 							</div> 

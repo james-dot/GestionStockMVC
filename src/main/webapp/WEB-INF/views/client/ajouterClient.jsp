@@ -19,7 +19,7 @@
 			<div id="content">
 				<%@include file="/WEB-INF/views/menu_top/topMenu.jsp" %><!--topMenu-->
 				<div class="container-fluid">
-					<h1 class="h3 mb-4 text-gray-800"><fmt:message key="common.client" /></h1>
+					<h1 class="h3 mb-4 text-gray-800"><fmt:message code="common.client" /></h1>
 				</div>
 			</div>
 	<div class="container">	
@@ -27,7 +27,7 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 							<div class="panel-heading">
-								<fmt:message key="client.nouveau"/>
+								<fmt:message code="client.nouveau"/>
 							</div>
 							<div class="panel-body"><!-- Formulaire Client -->
 								<c:url value="/client/enregistrer"	var= "urlEnregistrer" />	
@@ -36,28 +36,28 @@
               						  <f:hidden path="idClient" /><!-- qu on fait la modification le id est enregistrer -->
               						   <f:hidden path="photo" /><!-- la photo -->
               							<div class="form-group">
-              								<label><fmt:message key="common.nom"/></label>
+              								<label><fmt:message code="common.nom"/></label>
               								<f:input path="nom" class="form-control" placeholder="Nom"/>
               							</div>
               							<div class="form-group">
-              								<label><fmt:message key="common.prenom"/></label>
+              								<label><fmt:message code="common.prenom"/></label>
               								<f:input path="prenom" class="form-control" placeholder="Prenom"/>
               							</div>
               							<div class="form-group">
-              								<label><fmt:message key="common.adresse"/></label>
+              								<label><fmt:message code="common.adresse"/></label>
               								<f:input path="adresse" class="form-control" placeholder="Adresse"/>
               							</div>
               							<div class="form-group">
-              								<label><fmt:message key="common.mail"/></label>
+              								<label><fmt:message code="common.mail"/></label>
               								<f:input path="email" class="form-control" placeholder="Email"/>
               							</div>
               							<div class="form-group">
-              								<label><fmt:message key="common.photo"/></label>
+              								<label><fmt:message code="common.photo"/></label>
               								<input name="file" type="file" >
               							</div>
               							<div class="panel-footer">
-              								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message key="common.enregister"/></i></button>
-              								<a href="<c:url value="/client/" />" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message key="common.annuler"/></i></a>
+              								<button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;<fmt:message code="common.enregister"/></i></button>
+              								<a href="<c:url value="/client/" />" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;<fmt:message code="common.annuler"/></i></a>
               							</div>
               						</f:form>
                             </div>
@@ -66,16 +66,6 @@
 		</div>
 			
 	</div>		
-			 
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
